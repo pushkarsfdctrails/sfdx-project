@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.32.1'
+project:
+    name: sfdx-chan
+    package:
+        name: sfdx-chan
+        api_version: '50.0'
+    git:
+        default_branch: 'feature-maria-gallery'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/sfdx-chan/tests
+            options:
+                outputdir: robot/sfdx-chan/results
+
+    robot_testdoc:
+        options:
+            path: robot/sfdx-chan/tests
+            output: robot/sfdx-chan/doc/sfdx-chan_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
